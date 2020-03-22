@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
             @recipes = Recipe.fetch(params[:meal_type])
             render json: @recipes, :except => [:created_at, :updated_at]
         rescue StandardError => error_variable
-            render json: { error: error_variable.message}, status: 500
+            render json: { error: error_variable.message }, status: 400
         end
     end
 end

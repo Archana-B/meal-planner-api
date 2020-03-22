@@ -9,7 +9,7 @@ class Recipe < ApplicationRecord
         if required_meal_type.blank?
             Recipe.all
         else
-            raise StandardError.new "Invalid meal type" unless meal_types.keys.include?(required_meal_type)
+            raise StandardError.new I18n.t 'invalid_meal_type' unless meal_types.keys.include?(required_meal_type)
             Recipe.where(meal_type: required_meal_type)
         end
     end
