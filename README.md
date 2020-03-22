@@ -10,5 +10,7 @@
 
 ## To run test cases 
 
+``` RAILS_ENV=test rails db:migrate db:seed ```
+
 ``` rspec ```
 
